@@ -1,0 +1,1739 @@
+'
+'
+'
+'	D:\Desktop\WMC\WMC_complete.ebs
+'	Generated on: 7/9/2015	8:35:06
+'
+'
+'	This file generated with E-Studio interface.
+'	E-Prime Copyright © 2002 Psychology Software Tools.
+'	ALL RIGHTS RESERVED
+
+'	Legal use of this experiment script requires a full E-Prime or Runtime License.
+'
+'
+'	Author:
+'		CHINLAN (NTUST)
+'
+'
+'
+'
+
+Option CStrings On
+Dim ebContext as Context
+
+
+'--------------------------------------------------------------------------
+' Class Declarations
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+'InitTextDisplayDefaults
+'--------------------------------------------------------------------------
+Sub InitTextDisplayDefaults(theTextDisplay As TextDisplay)
+
+	If theTextDisplay Is Nothing Then Exit Sub
+
+	theTextDisplay.X = "center"
+	theTextDisplay.Y = "center"
+	theTextDisplay.Width = "100%"
+	theTextDisplay.Height = "100%"
+	theTextDisplay.ForeColor = CColor("black")
+	theTextDisplay.BackColor = CColor("white")
+	theTextDisplay.BackStyle = "opaque"
+	theTextDisplay.BorderColor = CColor("black")
+	theTextDisplay.BorderWidth = CLng("0")
+	theTextDisplay.XAlign = "center"
+	theTextDisplay.YAlign = "center"
+	theTextDisplay.AlignHorizontal = "center"
+	theTextDisplay.AlignVertical = "center"
+	theTextDisplay.WordWrap = True
+	theTextDisplay.ClearAfter = CLogical("No")
+	theTextDisplay.FontName = "Courier New"
+	theTextDisplay.FontSize = "18"
+	theTextDisplay.FontBold = CLogical("Yes")
+	theTextDisplay.FontItalic = CLogical("No")
+	theTextDisplay.FontUnderline = CLogical("No")
+	theTextDisplay.FontStrikeout = CLogical("No")
+
+End Sub
+
+
+
+
+
+'--------------------------------------------------------------------------
+'InitImageDisplayDefaults
+'--------------------------------------------------------------------------
+Sub InitImageDisplayDefaults(theImageDisplay As ImageDisplay)
+
+	If theImageDisplay Is Nothing Then Exit Sub
+
+	theImageDisplay.X = "center"
+	theImageDisplay.Y = "center"
+	theImageDisplay.Width = "100%"
+	theImageDisplay.Height = "100%"
+	theImageDisplay.BackColor = CColor("black")
+	theImageDisplay.BackStyle = "opaque"
+	theImageDisplay.BorderColor = CColor("black")
+	theImageDisplay.BorderWidth = CLng("0")
+	theImageDisplay.XAlign = "center"
+	theImageDisplay.YAlign = "center"
+	theImageDisplay.AlignHorizontal = "center"
+	theImageDisplay.AlignVertical = "center"
+	theImageDisplay.ClearAfter = CLogical("No")
+	theImageDisplay.UseSourceColorKey = CLogical("No")
+	theImageDisplay.SourceColorKey = CColor("black")
+	theImageDisplay.MirrorLeftRight = CLogical("No")
+	theImageDisplay.MirrorUpDown = CLogical("No")
+	theImageDisplay.Stretch = CLogical("No")
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'--------------------------------------------------------------------------
+' Instance Declarations
+'--------------------------------------------------------------------------
+Dim Display As DisplayDevice
+Dim Sound As SoundDevice
+Dim Keyboard As KeyboardDevice
+Dim Mouse As MouseDevice
+Dim SessionProc As Procedure
+
+Dim TrialBList As List
+
+Dim fixation As TextDisplay
+
+Dim Introduction As ImageDisplay
+Dim IntroductionEchoClients As EchoClientCollection
+
+Dim BlockList As List
+
+Dim BlockProc As Procedure
+
+Dim TrialB2 As Procedure
+
+Dim TrialB6 As Procedure
+
+Dim TrialB3 As Procedure
+
+Dim TrialB4 As Procedure
+
+Dim TrialB5 As Procedure
+
+Dim Block2 As List
+
+Dim TrialListB2 As List
+
+Dim Block3 As List
+
+Dim Block4 As List
+
+Dim Block5 As List
+
+Dim TrialB2Proc As Procedure
+
+Dim ListB2 As List
+
+Dim B2 As Procedure
+
+Dim TextDisplay2 As TextDisplay
+Dim TextDisplay2EchoClients As EchoClientCollection
+
+Dim TrialListB3 As List
+
+Dim TrialB3Proc As Procedure
+
+Dim ListB3 As List
+
+Dim B3 As Procedure
+
+Dim TrialListB4 As List
+
+Dim TrialB4Proc As Procedure
+
+Dim ListB4 As List
+
+Dim B4 As Procedure
+
+Dim TrialListB5 As List
+
+Dim TrialB5Proc As Procedure
+
+Dim ListB5 As List
+
+Dim B5 As Procedure
+
+Dim TrialListB6 As List
+
+Dim TrialB6Proc As Procedure
+
+Dim ListB6 As List
+
+Dim B6 As Procedure
+
+Dim Block6 As List
+
+Dim TextDisplay1 As TextDisplay
+
+Dim Introduction2 As ImageDisplay
+Dim Introduction2EchoClients As EchoClientCollection
+
+Dim Introduction3 As ImageDisplay
+Dim Introduction3EchoClients As EchoClientCollection
+
+Dim BeginPractice As ImageDisplay
+
+Dim Attention As ImageDisplay
+
+Dim PracticeList As List
+
+Dim PracticeProc As Procedure
+
+Dim PracticeWord As TextDisplay
+Dim PracticeWordEchoClients As EchoClientCollection
+
+Dim PracticeEquation As TextDisplay
+Dim PracticeEquationEchoClients As EchoClientCollection
+
+Dim RecallCue As ImageDisplay
+Dim RecallCueEchoClients As EchoClientCollection
+
+Dim BeginExperiment As ImageDisplay
+
+Dim Goodbye As ImageDisplay
+Dim GoodbyeEchoClients As EchoClientCollection
+
+
+
+'--------------------------------------------------------------------------
+' Package Declare Script
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' User Script
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' Package Global Script
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' Package Routines
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' Implementation
+'--------------------------------------------------------------------------
+Sub SessionProc_Run(c as Context)
+	
+	
+	Introduction.InputMasks.Reset
+	
+	IntroductionEchoClients.RemoveAll
+	Introduction.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Introduction.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	Introduction.Run
+	
+	
+	Introduction2.InputMasks.Reset
+	
+	Introduction2EchoClients.RemoveAll
+	Introduction2.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Introduction2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	Introduction2.Run
+	
+	
+	Introduction3.InputMasks.Reset
+	
+	Introduction3EchoClients.RemoveAll
+	Introduction3.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Introduction3.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	Introduction3.Run
+	
+	BeginPractice.Run
+	
+	Attention.Run
+	PracticeList.Run c
+	
+	
+	RecallCue.InputMasks.Reset
+	
+	RecallCueEchoClients.RemoveAll
+	RecallCue.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(RecallCue.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	RecallCue.Run
+	
+	BeginExperiment.Run
+	
+	fixation.Run
+	BlockList.Run c
+	
+	
+	Goodbye.InputMasks.Reset
+	
+	GoodbyeEchoClients.RemoveAll
+	Goodbye.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Goodbye.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	Goodbye.Run
+
+	c.Log
+End Sub
+
+Sub BlockProc_Run(c as Context)
+	TrialBList.Run c
+
+	c.Log
+End Sub
+
+Sub TrialB2_Run(c as Context)
+	
+	fixation.Run
+	TrialListB2.Run c
+	
+	
+	RecallCue.InputMasks.Reset
+	
+	RecallCueEchoClients.RemoveAll
+	RecallCue.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(RecallCue.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	RecallCue.Run
+
+	c.Log
+End Sub
+
+Sub TrialB6_Run(c as Context)
+	
+	fixation.Run
+	TrialListB6.Run c
+	
+	
+	RecallCue.InputMasks.Reset
+	
+	RecallCueEchoClients.RemoveAll
+	RecallCue.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(RecallCue.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	RecallCue.Run
+
+	c.Log
+End Sub
+
+Sub TrialB3_Run(c as Context)
+	
+	fixation.Run
+	TrialListB3.Run c
+	
+	
+	RecallCue.InputMasks.Reset
+	
+	RecallCueEchoClients.RemoveAll
+	RecallCue.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(RecallCue.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	RecallCue.Run
+
+	c.Log
+End Sub
+
+Sub TrialB4_Run(c as Context)
+	
+	fixation.Run
+	TrialListB4.Run c
+	
+	
+	RecallCue.InputMasks.Reset
+	
+	RecallCueEchoClients.RemoveAll
+	RecallCue.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(RecallCue.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	RecallCue.Run
+
+	c.Log
+End Sub
+
+Sub TrialB5_Run(c as Context)
+	
+	fixation.Run
+	TrialListB5.Run c
+	
+	
+	RecallCue.InputMasks.Reset
+	
+	RecallCueEchoClients.RemoveAll
+	RecallCue.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(RecallCue.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	RecallCue.Run
+
+	c.Log
+End Sub
+
+Sub TrialB2Proc_Run(c as Context)
+	ListB2.Run c
+
+	c.Log
+End Sub
+
+Sub B2_Run(c as Context)
+	
+	TextDisplay2.Text = c.GetAttrib("S1")
+	
+	TextDisplay2.InputMasks.Reset
+	
+	TextDisplay2EchoClients.RemoveAll
+	TextDisplay2.InputMasks.Add Keyboard.CreateInputMask("pq", c.GetAttrib("correctkey"), CLng(TextDisplay2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	TextDisplay2.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+	
+	TextDisplay1.Text = c.GetAttrib("S2")
+	TextDisplay1.Run
+	
+	fixation.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+
+	c.Log
+End Sub
+
+Sub TrialB3Proc_Run(c as Context)
+	ListB3.Run c
+
+	c.Log
+End Sub
+
+Sub B3_Run(c as Context)
+	
+	TextDisplay2.Text = c.GetAttrib("S1")
+	
+	TextDisplay2.InputMasks.Reset
+	
+	TextDisplay2EchoClients.RemoveAll
+	TextDisplay2.InputMasks.Add Keyboard.CreateInputMask("pq", c.GetAttrib("correctkey"), CLng(TextDisplay2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	TextDisplay2.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+	
+	TextDisplay1.Text = c.GetAttrib("S2")
+	TextDisplay1.Run
+	
+	fixation.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+
+	c.Log
+End Sub
+
+Sub TrialB4Proc_Run(c as Context)
+	ListB4.Run c
+
+	c.Log
+End Sub
+
+Sub B4_Run(c as Context)
+	
+	TextDisplay2.Text = c.GetAttrib("S1")
+	
+	TextDisplay2.InputMasks.Reset
+	
+	TextDisplay2EchoClients.RemoveAll
+	TextDisplay2.InputMasks.Add Keyboard.CreateInputMask("pq", c.GetAttrib("correctkey"), CLng(TextDisplay2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	TextDisplay2.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+	
+	TextDisplay1.Text = c.GetAttrib("S2")
+	TextDisplay1.Run
+	
+	fixation.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+
+	c.Log
+End Sub
+
+Sub TrialB5Proc_Run(c as Context)
+	ListB5.Run c
+
+	c.Log
+End Sub
+
+Sub B5_Run(c as Context)
+	
+	TextDisplay2.Text = c.GetAttrib("S1")
+	
+	TextDisplay2.InputMasks.Reset
+	
+	TextDisplay2EchoClients.RemoveAll
+	TextDisplay2.InputMasks.Add Keyboard.CreateInputMask("pq", c.GetAttrib("correctkey"), CLng(TextDisplay2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	TextDisplay2.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+	
+	TextDisplay1.Text = c.GetAttrib("S2")
+	TextDisplay1.Run
+	
+	fixation.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+
+	c.Log
+End Sub
+
+Sub TrialB6Proc_Run(c as Context)
+	ListB6.Run c
+
+	c.Log
+End Sub
+
+Sub B6_Run(c as Context)
+	
+	TextDisplay2.Text = c.GetAttrib("S1")
+	
+	TextDisplay2.InputMasks.Reset
+	
+	TextDisplay2EchoClients.RemoveAll
+	TextDisplay2.InputMasks.Add Keyboard.CreateInputMask("pq", c.GetAttrib("correctkey"), CLng(TextDisplay2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	TextDisplay2.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+	
+	TextDisplay1.Text = c.GetAttrib("S2")
+	TextDisplay1.Run
+	
+	fixation.Run
+	c.SetAttrib "TextDisplay2.RTTime", TextDisplay2.RTTime
+	c.SetAttrib "TextDisplay2.ACC", TextDisplay2.ACC
+	c.SetAttrib "TextDisplay2.RT", TextDisplay2.RT
+	c.SetAttrib "TextDisplay2.RESP", TextDisplay2.RESP
+	c.SetAttrib "TextDisplay2.CRESP", TextDisplay2.CRESP
+	
+
+	c.Log
+End Sub
+
+Sub PracticeProc_Run(c as Context)
+	
+	fixation.Run
+	
+	PracticeEquation.Text = c.GetAttrib("St1")
+	
+	PracticeEquation.InputMasks.Reset
+	
+	PracticeEquationEchoClients.RemoveAll
+	PracticeEquation.InputMasks.Add Keyboard.CreateInputMask("pq", "", CLng(PracticeEquation.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	PracticeEquation.Run
+	
+	PracticeWord.Text = c.GetAttrib("St2")
+	
+	PracticeWord.InputMasks.Reset
+	
+	PracticeWordEchoClients.RemoveAll
+	PracticeWord.InputMasks.Add Keyboard.CreateInputMask("pq", "", CLng(PracticeWord.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	PracticeWord.Run
+
+	c.Log
+End Sub
+
+
+
+'--------------------------------------------------------------------------
+' InitDevices
+'
+'--------------------------------------------------------------------------
+Sub InitDevices(c As Context)
+
+
+
+	SetOSThreadPriority 3
+
+
+	Set Display = New DisplayDevice
+	Display.Name = "Display"
+
+	Dim DisplayDisplayDeviceInfo As DisplayDeviceInfo
+	DisplayDisplayDeviceInfo.XRes = 1280
+	DisplayDisplayDeviceInfo.YRes = 1024
+	DisplayDisplayDeviceInfo.ColorDepth = 32
+	DisplayDisplayDeviceInfo.RefreshRate = 0
+	DisplayDisplayDeviceInfo.NumPages = 0
+
+	Display.Open DisplayDisplayDeviceInfo
+	c.SetAttrib "Display.RefreshRate", Format$(Display.CalculatedRefreshRate, "0.000")
+
+	Set Sound = New SoundDevice
+	Sound.Name = "Sound"
+
+	Dim SoundSoundOutDeviceInfo As SoundDeviceInfo
+	SoundSoundOutDeviceInfo.Channels = 2
+	SoundSoundOutDeviceInfo.SamplesPerSecond = 22050
+	SoundSoundOutDeviceInfo.BitsPerSample = 16
+	
+	Set Keyboard = New KeyboardDevice
+	Keyboard.Name = "Keyboard"
+
+	Dim KeyboardKeyboardDeviceInfo as KeyboardDeviceInfo
+	KeyboardKeyboardDeviceInfo.CollectionMode = ebPressesOnly
+	KeyboardKeyboardDeviceInfo.CapsLock = ebCapsLockOff
+	KeyboardKeyboardDeviceInfo.NumLock = ebNumLockOn
+	Keyboard.Open KeyboardKeyboardDeviceInfo
+	
+	Set Mouse = New MouseDevice
+	Mouse.Name = "Mouse"
+
+	Dim MouseMouseDeviceInfo as MouseDeviceInfo
+	MouseMouseDeviceInfo.OpenMode = ebMouseOpenModeDirect
+	MouseMouseDeviceInfo.CollectionMode = ebPressesOnly
+	MouseMouseDeviceInfo.ShowCursor = False
+	Mouse.Open MouseMouseDeviceInfo
+
+
+	SetOSThreadPriority 0
+
+End Sub
+
+
+
+'--------------------------------------------------------------------------
+' InitObjects
+'
+'--------------------------------------------------------------------------
+Sub InitObjects(c As Context)
+
+	Set SessionProc = New Procedure
+	SessionProc.Name = "SessionProc"
+	SessionProc.Tag = ""
+	SessionProc.Subroutine = "SessionProc_Run"
+
+	Set TrialBList = New List
+	TrialBList.Name = "TrialBList"
+	TrialBList.Tag = ""
+
+	'Initialization for TrialBList
+	
+	Set TrialBList.Order = New RandomOrder
+	Set TrialBList.Deletion = NoDeletion
+	TrialBList.ResetEveryRun = False
+
+	' Create the column headings
+	TrialBList.Filename = ""
+	TrialBList.LoadMethod = ebLoadMethodEmbedded
+
+	TrialBList.Load
+
+	Set TrialBList.TerminateCondition = Cycles(1)
+	Set TrialBList.ResetCondition = Samples(5)
+	TrialBList.Reset
+	
+	Set fixation = New TextDisplay
+	fixation.Name = "fixation"
+	fixation.Tag = ""
+
+	InitTextDisplayDefaults fixation
+
+	fixation.Text = "+"
+	fixation.FontSize = "48"
+	fixation.Duration = CLng("1000")
+	fixation.TimingMode = ebTimingModeEvent
+	fixation.PreRelease = Val("0")
+
+	fixation.OnsetSync = 1
+	fixation.OffsetSync = 0
+
+	Set Introduction = New ImageDisplay
+	Introduction.Name = "Introduction"
+	Introduction.Tag = ""
+
+	Set IntroductionEchoClients = New EchoClientCollection
+	Introduction.Filename = "introduction.bmp"
+	Introduction.Load
+
+	InitImageDisplayDefaults Introduction
+
+	Introduction.BackColor = CColor("white")
+	Introduction.Duration = CLng("-1")
+	Introduction.TimingMode = ebTimingModeEvent
+	Introduction.PreRelease = Val("0")
+
+	Introduction.OnsetSync = 1
+	Introduction.OffsetSync = 0
+
+	Set BlockList = New List
+	BlockList.Name = "BlockList"
+	BlockList.Tag = ""
+
+	'Initialization for BlockList
+	
+	Set BlockList.Order = New RandomOrder
+	Set BlockList.Deletion = NoDeletion
+	BlockList.ResetEveryRun = False
+
+	' Create the column headings
+	BlockList.Filename = ""
+	BlockList.LoadMethod = ebLoadMethodEmbedded
+
+	BlockList.Load
+
+	Set BlockList.TerminateCondition = Cycles(1)
+	Set BlockList.ResetCondition = Samples(3)
+	BlockList.Reset
+	
+	Set BlockProc = New Procedure
+	BlockProc.Name = "BlockProc"
+	BlockProc.Tag = ""
+	BlockProc.Subroutine = "BlockProc_Run"
+
+	Set TrialB2 = New Procedure
+	TrialB2.Name = "TrialB2"
+	TrialB2.Tag = ""
+	TrialB2.Subroutine = "TrialB2_Run"
+
+	Set TrialB6 = New Procedure
+	TrialB6.Name = "TrialB6"
+	TrialB6.Tag = ""
+	TrialB6.Subroutine = "TrialB6_Run"
+
+	Set TrialB3 = New Procedure
+	TrialB3.Name = "TrialB3"
+	TrialB3.Tag = ""
+	TrialB3.Subroutine = "TrialB3_Run"
+
+	Set TrialB4 = New Procedure
+	TrialB4.Name = "TrialB4"
+	TrialB4.Tag = ""
+	TrialB4.Subroutine = "TrialB4_Run"
+
+	Set TrialB5 = New Procedure
+	TrialB5.Name = "TrialB5"
+	TrialB5.Tag = ""
+	TrialB5.Subroutine = "TrialB5_Run"
+
+	Set Block2 = New List
+	Block2.Name = "Block2"
+	Block2.Tag = ""
+
+	'Initialization for Block2
+	
+	Set Block2.Order = New SequentialOrder
+	Set Block2.Deletion = NoDeletion
+	Block2.ResetEveryRun = False
+
+	' Create the column headings
+	Block2.Filename = "Block2.txt"
+	Block2.LoadMethod = ebLoadMethodFile
+
+	Block2.Load
+	Block2.Reset
+	
+	Set Block2.TerminateCondition = Cycles(1)
+	Set Block2.ResetCondition = Samples(Block2.Deletion.Count)
+	
+	Set TrialListB2 = New List
+	TrialListB2.Name = "TrialListB2"
+	TrialListB2.Tag = ""
+
+	'Initialization for TrialListB2
+	
+	Set TrialListB2.Order = New RandomOrder
+	Set TrialListB2.Deletion = NoDeletion
+	TrialListB2.ResetEveryRun = False
+
+	' Create the column headings
+	TrialListB2.AddAttrib "SetList2"
+	TrialListB2.Filename = ""
+	TrialListB2.LoadMethod = ebLoadMethodEmbedded
+
+	TrialListB2.Load
+
+	Set TrialListB2.TerminateCondition = Cycles(1)
+	Set TrialListB2.ResetCondition = Samples(2)
+	TrialListB2.Reset
+	
+	Set Block3 = New List
+	Block3.Name = "Block3"
+	Block3.Tag = ""
+
+	'Initialization for Block3
+	
+	Set Block3.Order = New SequentialOrder
+	Set Block3.Deletion = NoDeletion
+	Block3.ResetEveryRun = False
+
+	' Create the column headings
+	Block3.Filename = "Block3.txt"
+	Block3.LoadMethod = ebLoadMethodFile
+
+	Block3.Load
+	Block3.Reset
+	
+	Set Block3.TerminateCondition = Cycles(1)
+	Set Block3.ResetCondition = Samples(Block3.Deletion.Count)
+	
+	Set Block4 = New List
+	Block4.Name = "Block4"
+	Block4.Tag = ""
+
+	'Initialization for Block4
+	
+	Set Block4.Order = New SequentialOrder
+	Set Block4.Deletion = NoDeletion
+	Block4.ResetEveryRun = False
+
+	' Create the column headings
+	Block4.Filename = "Block4.txt"
+	Block4.LoadMethod = ebLoadMethodFile
+
+	Block4.Load
+	Block4.Reset
+	
+	Set Block4.TerminateCondition = Cycles(1)
+	Set Block4.ResetCondition = Samples(Block4.Deletion.Count)
+	
+	Set Block5 = New List
+	Block5.Name = "Block5"
+	Block5.Tag = ""
+
+	'Initialization for Block5
+	
+	Set Block5.Order = New SequentialOrder
+	Set Block5.Deletion = NoDeletion
+	Block5.ResetEveryRun = False
+
+	' Create the column headings
+	Block5.Filename = "Block5.txt"
+	Block5.LoadMethod = ebLoadMethodFile
+
+	Block5.Load
+	Block5.Reset
+	
+	Set Block5.TerminateCondition = Cycles(1)
+	Set Block5.ResetCondition = Samples(Block5.Deletion.Count)
+	
+	Set TrialB2Proc = New Procedure
+	TrialB2Proc.Name = "TrialB2Proc"
+	TrialB2Proc.Tag = ""
+	TrialB2Proc.Subroutine = "TrialB2Proc_Run"
+
+	Set ListB2 = New List
+	ListB2.Name = "ListB2"
+	ListB2.Tag = ""
+
+	'Initialization for ListB2
+	
+	Set ListB2.Order = New RandomOrder
+	Set ListB2.Deletion = NoDeletion
+	ListB2.ResetEveryRun = False
+
+	' Create the column headings
+	ListB2.AddAttrib "S1"
+	ListB2.AddAttrib "S2"
+	ListB2.Filename = ""
+	ListB2.LoadMethod = ebLoadMethodEmbedded
+
+	ListB2.Load
+
+	Set ListB2.TerminateCondition = Cycles(1)
+	Set ListB2.ResetCondition = Samples(1)
+	ListB2.Reset
+	
+	Set B2 = New Procedure
+	B2.Name = "B2"
+	B2.Tag = ""
+	B2.Subroutine = "B2_Run"
+
+	Set TextDisplay2 = New TextDisplay
+	TextDisplay2.Name = "TextDisplay2"
+	TextDisplay2.Tag = ""
+
+	Set TextDisplay2EchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults TextDisplay2
+
+	TextDisplay2.FontSize = "24"
+	TextDisplay2.Duration = CLng("3000")
+	TextDisplay2.TimingMode = ebTimingModeEvent
+	TextDisplay2.PreRelease = Val("0")
+
+	TextDisplay2.OnsetSync = 1
+	TextDisplay2.OffsetSync = 0
+
+	Set TrialListB3 = New List
+	TrialListB3.Name = "TrialListB3"
+	TrialListB3.Tag = ""
+
+	'Initialization for TrialListB3
+	
+	Set TrialListB3.Order = New RandomOrder
+	Set TrialListB3.Deletion = NoDeletion
+	TrialListB3.ResetEveryRun = False
+
+	' Create the column headings
+	TrialListB3.AddAttrib "SetList3"
+	TrialListB3.Filename = ""
+	TrialListB3.LoadMethod = ebLoadMethodEmbedded
+
+	TrialListB3.Load
+
+	Set TrialListB3.TerminateCondition = Cycles(1)
+	Set TrialListB3.ResetCondition = Samples(3)
+	TrialListB3.Reset
+	
+	Set TrialB3Proc = New Procedure
+	TrialB3Proc.Name = "TrialB3Proc"
+	TrialB3Proc.Tag = ""
+	TrialB3Proc.Subroutine = "TrialB3Proc_Run"
+
+	Set ListB3 = New List
+	ListB3.Name = "ListB3"
+	ListB3.Tag = ""
+
+	'Initialization for ListB3
+	
+	Set ListB3.Order = New RandomOrder
+	Set ListB3.Deletion = NoDeletion
+	ListB3.ResetEveryRun = False
+
+	' Create the column headings
+	ListB3.AddAttrib "S1"
+	ListB3.AddAttrib "S2"
+	ListB3.Filename = ""
+	ListB3.LoadMethod = ebLoadMethodEmbedded
+
+	ListB3.Load
+
+	Set ListB3.TerminateCondition = Cycles(1)
+	Set ListB3.ResetCondition = Samples(1)
+	ListB3.Reset
+	
+	Set B3 = New Procedure
+	B3.Name = "B3"
+	B3.Tag = ""
+	B3.Subroutine = "B3_Run"
+
+	Set TrialListB4 = New List
+	TrialListB4.Name = "TrialListB4"
+	TrialListB4.Tag = ""
+
+	'Initialization for TrialListB4
+	
+	Set TrialListB4.Order = New RandomOrder
+	Set TrialListB4.Deletion = NoDeletion
+	TrialListB4.ResetEveryRun = False
+
+	' Create the column headings
+	TrialListB4.AddAttrib "SetList4"
+	TrialListB4.Filename = ""
+	TrialListB4.LoadMethod = ebLoadMethodEmbedded
+
+	TrialListB4.Load
+
+	Set TrialListB4.TerminateCondition = Cycles(1)
+	Set TrialListB4.ResetCondition = Samples(4)
+	TrialListB4.Reset
+	
+	Set TrialB4Proc = New Procedure
+	TrialB4Proc.Name = "TrialB4Proc"
+	TrialB4Proc.Tag = ""
+	TrialB4Proc.Subroutine = "TrialB4Proc_Run"
+
+	Set ListB4 = New List
+	ListB4.Name = "ListB4"
+	ListB4.Tag = ""
+
+	'Initialization for ListB4
+	
+	Set ListB4.Order = New RandomOrder
+	Set ListB4.Deletion = NoDeletion
+	ListB4.ResetEveryRun = False
+
+	' Create the column headings
+	ListB4.AddAttrib "S1"
+	ListB4.AddAttrib "S2"
+	ListB4.Filename = ""
+	ListB4.LoadMethod = ebLoadMethodEmbedded
+
+	ListB4.Load
+
+	Set ListB4.TerminateCondition = Cycles(1)
+	Set ListB4.ResetCondition = Samples(1)
+	ListB4.Reset
+	
+	Set B4 = New Procedure
+	B4.Name = "B4"
+	B4.Tag = ""
+	B4.Subroutine = "B4_Run"
+
+	Set TrialListB5 = New List
+	TrialListB5.Name = "TrialListB5"
+	TrialListB5.Tag = ""
+
+	'Initialization for TrialListB5
+	
+	Set TrialListB5.Order = New RandomOrder
+	Set TrialListB5.Deletion = NoDeletion
+	TrialListB5.ResetEveryRun = False
+
+	' Create the column headings
+	TrialListB5.AddAttrib "SetList5"
+	TrialListB5.Filename = ""
+	TrialListB5.LoadMethod = ebLoadMethodEmbedded
+
+	TrialListB5.Load
+
+	Set TrialListB5.TerminateCondition = Cycles(1)
+	Set TrialListB5.ResetCondition = Samples(5)
+	TrialListB5.Reset
+	
+	Set TrialB5Proc = New Procedure
+	TrialB5Proc.Name = "TrialB5Proc"
+	TrialB5Proc.Tag = ""
+	TrialB5Proc.Subroutine = "TrialB5Proc_Run"
+
+	Set ListB5 = New List
+	ListB5.Name = "ListB5"
+	ListB5.Tag = ""
+
+	'Initialization for ListB5
+	
+	Set ListB5.Order = New RandomOrder
+	Set ListB5.Deletion = NoDeletion
+	ListB5.ResetEveryRun = False
+
+	' Create the column headings
+	ListB5.AddAttrib "S1"
+	ListB5.AddAttrib "S2"
+	ListB5.Filename = ""
+	ListB5.LoadMethod = ebLoadMethodEmbedded
+
+	ListB5.Load
+
+	Set ListB5.TerminateCondition = Cycles(1)
+	Set ListB5.ResetCondition = Samples(1)
+	ListB5.Reset
+	
+	Set B5 = New Procedure
+	B5.Name = "B5"
+	B5.Tag = ""
+	B5.Subroutine = "B5_Run"
+
+	Set TrialListB6 = New List
+	TrialListB6.Name = "TrialListB6"
+	TrialListB6.Tag = ""
+
+	'Initialization for TrialListB6
+	
+	Set TrialListB6.Order = New RandomOrder
+	Set TrialListB6.Deletion = NoDeletion
+	TrialListB6.ResetEveryRun = False
+
+	' Create the column headings
+	TrialListB6.AddAttrib "SetList6"
+	TrialListB6.Filename = ""
+	TrialListB6.LoadMethod = ebLoadMethodEmbedded
+
+	TrialListB6.Load
+
+	Set TrialListB6.TerminateCondition = Cycles(1)
+	Set TrialListB6.ResetCondition = Samples(6)
+	TrialListB6.Reset
+	
+	Set TrialB6Proc = New Procedure
+	TrialB6Proc.Name = "TrialB6Proc"
+	TrialB6Proc.Tag = ""
+	TrialB6Proc.Subroutine = "TrialB6Proc_Run"
+
+	Set ListB6 = New List
+	ListB6.Name = "ListB6"
+	ListB6.Tag = ""
+
+	'Initialization for ListB6
+	
+	Set ListB6.Order = New RandomOrder
+	Set ListB6.Deletion = NoDeletion
+	ListB6.ResetEveryRun = False
+
+	' Create the column headings
+	ListB6.AddAttrib "S1"
+	ListB6.AddAttrib "S2"
+	ListB6.Filename = ""
+	ListB6.LoadMethod = ebLoadMethodEmbedded
+
+	ListB6.Load
+
+	Set ListB6.TerminateCondition = Cycles(1)
+	Set ListB6.ResetCondition = Samples(1)
+	ListB6.Reset
+	
+	Set B6 = New Procedure
+	B6.Name = "B6"
+	B6.Tag = ""
+	B6.Subroutine = "B6_Run"
+
+	Set Block6 = New List
+	Block6.Name = "Block6"
+	Block6.Tag = ""
+
+	'Initialization for Block6
+	
+	Set Block6.Order = New SequentialOrder
+	Set Block6.Deletion = NoDeletion
+	Block6.ResetEveryRun = False
+
+	' Create the column headings
+	Block6.Filename = "Block6.txt"
+	Block6.LoadMethod = ebLoadMethodFile
+
+	Block6.Load
+	Block6.Reset
+	
+	Set Block6.TerminateCondition = Cycles(1)
+	Set Block6.ResetCondition = Samples(Block6.Deletion.Count)
+	
+	Set TextDisplay1 = New TextDisplay
+	TextDisplay1.Name = "TextDisplay1"
+	TextDisplay1.Tag = ""
+
+	InitTextDisplayDefaults TextDisplay1
+
+	TextDisplay1.FontSize = "24"
+	TextDisplay1.Duration = CLng("1000")
+	TextDisplay1.TimingMode = ebTimingModeEvent
+	TextDisplay1.PreRelease = Val("0")
+
+	TextDisplay1.OnsetSync = 1
+	TextDisplay1.OffsetSync = 0
+
+	Set Introduction2 = New ImageDisplay
+	Introduction2.Name = "Introduction2"
+	Introduction2.Tag = ""
+
+	Set Introduction2EchoClients = New EchoClientCollection
+	Introduction2.Filename = "introduction2.bmp"
+	Introduction2.Load
+
+	InitImageDisplayDefaults Introduction2
+
+	Introduction2.BackColor = CColor("white")
+	Introduction2.Duration = CLng("-1")
+	Introduction2.TimingMode = ebTimingModeEvent
+	Introduction2.PreRelease = Val("0")
+
+	Introduction2.OnsetSync = 1
+	Introduction2.OffsetSync = 0
+
+	Set Introduction3 = New ImageDisplay
+	Introduction3.Name = "Introduction3"
+	Introduction3.Tag = ""
+
+	Set Introduction3EchoClients = New EchoClientCollection
+	Introduction3.Filename = "introduction3.bmp"
+	Introduction3.Load
+
+	InitImageDisplayDefaults Introduction3
+
+	Introduction3.BackColor = CColor("white")
+	Introduction3.Duration = CLng("-1")
+	Introduction3.TimingMode = ebTimingModeEvent
+	Introduction3.PreRelease = Val("0")
+
+	Introduction3.OnsetSync = 1
+	Introduction3.OffsetSync = 0
+
+	Set BeginPractice = New ImageDisplay
+	BeginPractice.Name = "BeginPractice"
+	BeginPractice.Tag = ""
+	BeginPractice.Filename = "put_hands.BMP"
+	BeginPractice.Load
+
+	InitImageDisplayDefaults BeginPractice
+
+	BeginPractice.BackColor = CColor("white")
+	BeginPractice.Duration = CLng("3000")
+	BeginPractice.TimingMode = ebTimingModeEvent
+	BeginPractice.PreRelease = Val("0")
+
+	BeginPractice.OnsetSync = 1
+	BeginPractice.OffsetSync = 0
+
+	Set Attention = New ImageDisplay
+	Attention.Name = "Attention"
+	Attention.Tag = ""
+	Attention.Filename = "watch_the_plus.BMP"
+	Attention.Load
+
+	InitImageDisplayDefaults Attention
+
+	Attention.BackColor = CColor("white")
+	Attention.Duration = CLng("2000")
+	Attention.TimingMode = ebTimingModeEvent
+	Attention.PreRelease = Val("0")
+
+	Attention.OnsetSync = 1
+	Attention.OffsetSync = 0
+
+	Set PracticeList = New List
+	PracticeList.Name = "PracticeList"
+	PracticeList.Tag = ""
+
+	'Initialization for PracticeList
+	
+	Set PracticeList.Order = New RandomOrder
+	Set PracticeList.Deletion = NoDeletion
+	PracticeList.ResetEveryRun = False
+
+	' Create the column headings
+	PracticeList.Filename = "Practice_List.txt"
+	PracticeList.LoadMethod = ebLoadMethodFile
+
+	PracticeList.Load
+	PracticeList.Reset
+	
+	Set PracticeList.TerminateCondition = Cycles(1)
+	Set PracticeList.ResetCondition = Samples(PracticeList.Deletion.Count)
+	
+	Set PracticeProc = New Procedure
+	PracticeProc.Name = "PracticeProc"
+	PracticeProc.Tag = ""
+	PracticeProc.Subroutine = "PracticeProc_Run"
+
+	Set PracticeWord = New TextDisplay
+	PracticeWord.Name = "PracticeWord"
+	PracticeWord.Tag = ""
+
+	Set PracticeWordEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults PracticeWord
+
+	PracticeWord.FontSize = "24"
+	PracticeWord.Duration = CLng("1000")
+	PracticeWord.TimingMode = ebTimingModeEvent
+	PracticeWord.PreRelease = Val("0")
+
+	PracticeWord.OnsetSync = 1
+	PracticeWord.OffsetSync = 0
+
+	Set PracticeEquation = New TextDisplay
+	PracticeEquation.Name = "PracticeEquation"
+	PracticeEquation.Tag = ""
+
+	Set PracticeEquationEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults PracticeEquation
+
+	PracticeEquation.FontSize = "24"
+	PracticeEquation.Duration = CLng("3000")
+	PracticeEquation.TimingMode = ebTimingModeEvent
+	PracticeEquation.PreRelease = Val("0")
+
+	PracticeEquation.OnsetSync = 1
+	PracticeEquation.OffsetSync = 0
+
+	Set RecallCue = New ImageDisplay
+	RecallCue.Name = "RecallCue"
+	RecallCue.Tag = ""
+
+	Set RecallCueEchoClients = New EchoClientCollection
+	RecallCue.Filename = "Write_down_the_words.bmp"
+	RecallCue.Load
+
+	InitImageDisplayDefaults RecallCue
+
+	RecallCue.BackColor = CColor("white")
+	RecallCue.Duration = CLng("-1")
+	RecallCue.TimingMode = ebTimingModeEvent
+	RecallCue.PreRelease = Val("0")
+
+	RecallCue.OnsetSync = 1
+	RecallCue.OffsetSync = 0
+
+	Set BeginExperiment = New ImageDisplay
+	BeginExperiment.Name = "BeginExperiment"
+	BeginExperiment.Tag = ""
+	BeginExperiment.Filename = "Attention.BMP"
+	BeginExperiment.Load
+
+	InitImageDisplayDefaults BeginExperiment
+
+	BeginExperiment.BackColor = CColor("white")
+	BeginExperiment.Duration = CLng("5000")
+	BeginExperiment.TimingMode = ebTimingModeEvent
+	BeginExperiment.PreRelease = Val("0")
+
+	BeginExperiment.OnsetSync = 1
+	BeginExperiment.OffsetSync = 0
+
+	Set Goodbye = New ImageDisplay
+	Goodbye.Name = "Goodbye"
+	Goodbye.Tag = ""
+
+	Set GoodbyeEchoClients = New EchoClientCollection
+	Goodbye.Filename = "goodbye.bmp"
+	Goodbye.Load
+
+	InitImageDisplayDefaults Goodbye
+
+	Goodbye.BackColor = CColor("white")
+	Goodbye.Duration = CLng("-1")
+	Goodbye.TimingMode = ebTimingModeEvent
+	Goodbye.PreRelease = Val("0")
+
+	Goodbye.OnsetSync = 1
+	Goodbye.OffsetSync = 0
+
+
+End Sub
+
+
+'--------------------------------------------------------------------------
+' InitPackages
+'
+'--------------------------------------------------------------------------
+Sub InitPackages(c As Context)
+
+End Sub
+
+
+
+'--------------------------------------------------------------------------
+'--------------------------------------------------------------------------
+' UnInitDevices
+'--------------------------------------------------------------------------
+Sub UnInitDevices()
+	Display.Close
+	Set Display = Nothing
+
+	Keyboard.Close
+	Set Keyboard = Nothing
+
+	Mouse.Close
+	Set Mouse = Nothing
+
+End Sub
+
+
+'--------------------------------------------------------------------------
+'--------------------------------------------------------------------------
+' UnInitPackages
+'--------------------------------------------------------------------------
+Sub UnInitPackages()
+End Sub
+
+
+'--------------------------------------------------------------------------
+' UnInitObjects
+'
+'--------------------------------------------------------------------------
+Sub UnInitObjects()
+
+	Set SessionProc = Nothing
+
+	Set TrialBList = Nothing
+
+	Set fixation = Nothing
+
+	Set Introduction = Nothing
+
+	Set IntroductionEchoClients = Nothing
+
+	Set BlockList = Nothing
+
+	Set BlockProc = Nothing
+
+	Set TrialB2 = Nothing
+
+	Set TrialB6 = Nothing
+
+	Set TrialB3 = Nothing
+
+	Set TrialB4 = Nothing
+
+	Set TrialB5 = Nothing
+
+	Set Block2 = Nothing
+
+	Set TrialListB2 = Nothing
+
+	Set Block3 = Nothing
+
+	Set Block4 = Nothing
+
+	Set Block5 = Nothing
+
+	Set TrialB2Proc = Nothing
+
+	Set ListB2 = Nothing
+
+	Set B2 = Nothing
+
+	Set TextDisplay2 = Nothing
+
+	Set TextDisplay2EchoClients = Nothing
+
+	Set TrialListB3 = Nothing
+
+	Set TrialB3Proc = Nothing
+
+	Set ListB3 = Nothing
+
+	Set B3 = Nothing
+
+	Set TrialListB4 = Nothing
+
+	Set TrialB4Proc = Nothing
+
+	Set ListB4 = Nothing
+
+	Set B4 = Nothing
+
+	Set TrialListB5 = Nothing
+
+	Set TrialB5Proc = Nothing
+
+	Set ListB5 = Nothing
+
+	Set B5 = Nothing
+
+	Set TrialListB6 = Nothing
+
+	Set TrialB6Proc = Nothing
+
+	Set ListB6 = Nothing
+
+	Set B6 = Nothing
+
+	Set Block6 = Nothing
+
+	Set TextDisplay1 = Nothing
+
+	Set Introduction2 = Nothing
+
+	Set Introduction2EchoClients = Nothing
+
+	Set Introduction3 = Nothing
+
+	Set Introduction3EchoClients = Nothing
+
+	Set BeginPractice = Nothing
+
+	Set Attention = Nothing
+
+	Set PracticeList = Nothing
+
+	Set PracticeProc = Nothing
+
+	Set PracticeWord = Nothing
+
+	Set PracticeWordEchoClients = Nothing
+
+	Set PracticeEquation = Nothing
+
+	Set PracticeEquationEchoClients = Nothing
+
+	Set RecallCue = Nothing
+
+	Set RecallCueEchoClients = Nothing
+
+	Set BeginExperiment = Nothing
+
+	Set Goodbye = Nothing
+
+	Set GoodbyeEchoClients = Nothing
+
+
+End Sub
+
+
+'--------------------------------------------------------------------------
+' Main
+'
+'--------------------------------------------------------------------------
+Sub Main()
+
+	CreateDefaultPort
+
+	' Create and initialize the default context, data file,
+	' and provide global access to the context.
+	Dim c As Context
+	Set c = New Context
+	Set c.DataFile = New DataFile
+	c.PushNewFrame
+	Set ebContext = c
+
+	' Set the log level names
+	c.SetLogLevelName 1, "Session"
+	c.SetLogLevelName 2, "Block"
+	c.SetLogLevelName 3, "Trial"
+	c.SetLogLevelName 4, "SubTrial"
+	c.SetLogLevelName 5, "LogLevel5"
+	c.SetLogLevelName 6, "LogLevel6"
+	c.SetLogLevelName 7, "LogLevel7"
+	c.SetLogLevelName 8, "LogLevel8"
+	c.SetLogLevelName 9, "LogLevel9"
+	c.SetLogLevelName 10, "LogLevel10"
+
+	' Set standard logging items
+	ebContext.SetAttrib "Experiment", "WMC_complete"
+	ebContext.SetAttrib "SessionDate", Date$
+	ebContext.SetAttrib "SessionTime", Time$
+	ebContext.SetAttrib "RandomSeed", PRNG.GetSeed()
+
+	If Basic.OS = ebWin32 Then
+		WinActivate "E-Run Experiment Window"
+	End If
+
+	' Get the StartupInfo
+	' Set default for GroupNumber
+	c.SetAttrib "Group", "1"
+
+
+	' Set the defaults for all of the StartupInfo
+	c.SetAttrib "Subject", "1"
+	c.SetAttrib "Session", "1"
+
+	Dim vAnswer As Variant
+StartupInfo_Begin:
+
+StartupInfoPrompt_Subject:
+	vAnswer = AskBox("Please enter the Subject Number (1-32767, 0=No Data Logging):", c.GetAttrib("Subject"))
+	If Not IsEmpty(vAnswer) then
+		If Not IsNumeric(vAnswer) then
+			MsgBox "Please enter an integer value"
+			GoTo StartupInfoPrompt_Subject
+		ElseIf CLng(vAnswer) < 0 Then
+			MsgBox "The value for Subject must not be less than 0"
+			GoTo StartupInfoPrompt_Subject
+		ElseIf CLng(vAnswer) > 32767 Then
+			MsgBox "The value for Subject must be not be greater than 32767"
+			GoTo StartupInfoPrompt_Subject
+		End If
+	Else
+		GoTo ExperimentAbort
+	End if
+
+	c.SetAttrib "Subject", CStr(vAnswer)
+
+StartupInfoPrompt_Session:
+	vAnswer = AskBox("Please enter the Session Number (1-32767):", c.GetAttrib("Session"))
+	If Not IsEmpty(vAnswer) then
+		If Not IsNumeric(vAnswer) then
+			MsgBox "Please enter an integer value"
+			GoTo StartupInfoPrompt_Session
+		ElseIf CLng(vAnswer) < 1 Then
+			MsgBox "The value for Session must not be less than 1"
+			GoTo StartupInfoPrompt_Session
+		ElseIf CLng(vAnswer) > 32767 Then
+			MsgBox "The value for Session must be not be greater than 32767"
+			GoTo StartupInfoPrompt_Session
+		End If
+	Else
+		GoTo ExperimentAbort
+	End if
+
+	c.SetAttrib "Session", CStr(vAnswer)
+
+	' Display the summary
+	Dim strSummary As String
+	strSummary = "Subject:    " & c.GetAttrib("Subject") & "\n"
+	strSummary = strSummary & "Session:    " & c.GetAttrib("Session") & "\n"
+	strSummary = strSummary & "\nContinue with the above startup info?"
+
+	Dim nSummaryAnswer As Integer
+	nSummaryAnswer = MsgBox(strSummary, ebYesNoCancel + ebQuestion, "Summary of Startup Info")
+	If nSummaryAnswer = ebNo Then
+		GoTo StartupInfo_Begin
+	ElseIf nSummaryAnswer = ebCancel Then
+		GoTo ExperimentAbort
+	End If
+
+
+	' Set the default Data Filename
+	c.DataFile.Filename = CStr(c.GetAttrib("Experiment")) & "-" & CStr(c.GetAttrib("Subject")) & "-" & CStr(c.GetAttrib("Session")) & ".txt"
+
+	' If we are logging data, then prompt to overwrite the data file if it exists
+	If CLng(c.GetAttrib("Subject")) <> 0 Then
+		If FileExists(c.DataFile.Filename) Then
+			If ebYes <> MsgBox("WARNING: The data file and/or recovery file already exists:\nFILE: " & c.DataFile.Filename & "\n\nDo you want to overwrite?", ebYesNo + ebQuestion) Then
+				GoTo ExperimentAbort
+			End If
+		End If
+	End If
+
+	' Initialize all system devices, packages, and objects
+	InitDevices c
+	InitPackages c
+	InitObjects c
+
+	' If we are logging data, then open the datafile
+	If CLng(c.GetAttrib("Subject")) <> 0 Then
+		c.DataFile.Open
+		c.LogHeader
+	End If
+
+	' Start the running of the Experiment
+	SessionProc.Run c
+
+	' Clean up the context and close the datafile
+	If CLng(c.GetAttrib("Subject")) <> 0 Then
+		c.DataFile.Close
+		' Attempt to convert the recovery file into a data file
+		Dim nConvert As Long
+		nConvert = c.DataFile.Convert(ebProgressSimple)
+		If nConvert = 0 Then
+			' Settings in E-Studio are set to not remove E-Recovery file
+		Else
+			' The datafile failed to convert!
+			MsgBox "ERROR: The datafile did not convert!\nFILE: " & c.DataFile.Filename & "\n\nIt is recommended that you recover your data with the E-Recovery utility"
+			MsgBox c.DataFile.GetLastErrorMessage()
+		End If
+	End If
+ExperimentFinish:
+
+	UnInitObjects
+
+	UnInitPackages
+	UnInitDevices
+
+ExperimentAbort:
+
+	' Clean up the context
+	c.PopFrame
+	Set c = Nothing
+	Set ebContext = Nothing
+
+	DestroyDefaultPort
+
+End Sub
+
+
+[DataSection_TrialBList(1)]
+Weight	Nested	Procedure
+1		TrialB2
+1		TrialB3
+1		TrialB4
+1		TrialB5
+1		TrialB6\0
+
+[DataSection_BlockList(1)]
+Weight	Nested	Procedure
+3		BlockProc\0
+
+[DataSection_TrialListB2(1)]
+Weight	Nested	Procedure	SetList2
+2		TrialB2Proc	Block2\0
+
+[DataSection_ListB2(1)]
+Weight	Nested	Procedure	S1	S2
+1	\[SetList2\]	B2	\[oper\]	\[word\]\0
+
+[DataSection_TrialListB3(1)]
+Weight	Nested	Procedure	SetList3
+3		TrialB3Proc	Block3\0
+
+[DataSection_ListB3(1)]
+Weight	Nested	Procedure	S1	S2
+1	\[SetList3\]	B3	\[oper\]	\[word\]\0
+
+[DataSection_TrialListB4(1)]
+Weight	Nested	Procedure	SetList4
+4		TrialB4Proc	Block4\0
+
+[DataSection_ListB4(1)]
+Weight	Nested	Procedure	S1	S2
+1	\[SetList4\]	B4	\[oper\]	\[word\]\0
+
+[DataSection_TrialListB5(1)]
+Weight	Nested	Procedure	SetList5
+5		TrialB5Proc	Block5\0
+
+[DataSection_ListB5(1)]
+Weight	Nested	Procedure	S1	S2
+1	\[SetList5\]	B5	\[oper\]	\[word\]\0
+
+[DataSection_TrialListB6(1)]
+Weight	Nested	Procedure	SetList6
+6		TrialB6Proc	Block6\0
+
+[DataSection_ListB6(1)]
+Weight	Nested	Procedure	S1	S2
+1	\[SetList6\]	B6	\[oper\]	\[word\]\0

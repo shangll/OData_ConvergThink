@@ -1,0 +1,7 @@
+Weight	Nested	Procedure	St1	St2
+1		PracticeProc	5¡Ï9=8	®ÑÂd
+1		PracticeProc	4¡Ï1=7	Àð¾À
+1		PracticeProc	1¡Ñ2=4	ªoº£
+1		PracticeProc	8¡Ñ8=64	¥Õ¶³
+1		PracticeProc	6¡Ð5=1	¤Ó¶§
+1		PracticeProc	10¡Ò5=2	²¡¾¹

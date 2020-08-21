@@ -1,0 +1,7 @@
+Weight	Nested	Procedure	ItemName	oper	word	correctkey
+1		B2	B2_1	(1×9)＋5=14	飛機	p
+1		B2	B2_2	(14÷2)＋2=8	名片	q
+1		B2	B2_3	(1×7)－2=4	果汁	q
+1		B2	B2_4	(8×2)－6=10	蝴蝶	p
+1		B2	B2_5	(3×6)－5=13	鏡子	p
+1		B2	B2_6	(10÷2)＋6=12	台南	q
