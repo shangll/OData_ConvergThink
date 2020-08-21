@@ -1,0 +1,16 @@
+setwd("D:\\SL_NCKU\\new")
+datAnd <- read.table(file = "andResults.txt", head = T)
+
+clst <- datAnd[ , c(5, 6)]
+clst <- scale(clst)
+hcClst = hclust(dist(clst))
+windows()
+plot(hcClst)
+distClst=dist(clst,method='euclidean')
+windows()
+heatmap(as.matrix(distClst))
+(kfc <- kmeans(clst, 3))
+windows()
+plot(clst, col = kfc$cluster)
+points(kfc$centers, col = 1:3, pch = 8, cex = 2)
+table(datAnd$Capacity, kfc$cluster)
